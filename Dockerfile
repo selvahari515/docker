@@ -1,6 +1,8 @@
 FROM openjdk:8-jdk
 
-RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y git curl sudo procps net-tools && rm -rf /var/lib/apt/lists/*
+
+RUN curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
 
 ARG user=jenkins
 ARG group=jenkins
